@@ -73,7 +73,7 @@ const Home = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center parallax opacity-60"
             style={{
-              backgroundImage: 'url("/IMG/IMG_9780.jpg")'
+              backgroundImage: 'url("https://github.com/anmol-cs/tour-vista-journeys-website/blob/main/IMG/IMG_9780.JPG")'
             }}
           ></div>
         </div>
