@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Map-pin } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -65,7 +65,7 @@ const Footer = () => {
                 <span className="text-gray-300">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center">
-                <Map-pin size={16} className="mr-2 text-gray-400" />
+                <MapPin size={16} className="mr-2 text-gray-400" />
                 <span className="text-gray-300">Downtown Tour Center</span>
               </div>
               <p className="text-gray-300">info@localexplorertours.com</p>
