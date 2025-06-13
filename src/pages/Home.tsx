@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Clock, Heart, Star, MapPin, Camera, Compass, TreePine } from 'lucide-react';
+import { Users, Clock, Heart, Star, MapPin, Camera, Compass, TreePine, Phone, Mail, MessageCircle } from 'lucide-react';
 import { useScrollAnimations } from '@/hooks/use-scroll-animations';
 
 const Home = () => {
@@ -30,10 +30,42 @@ const Home = () => {
     }
   ];
 
+  const handleWhatsApp = () => {
+    const selectedProperty = sessionStorage.getItem('selectedProperty');
+    let message = "Hi! I'm interested in booking an adventure with you.";
+    
+    if (selectedProperty) {
+      message = `Hi! I'm interested in booking ${selectedProperty}. Could you please provide more details about availability and pricing?`;
+      sessionStorage.removeItem('selectedProperty');
+    }
+    
+    const whatsappURL = `https://wa.me/15551234567?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  };
+
+  const handlePhone = () => {
+    window.location.href = 'tel:+15551234567';
+  };
+
+  const handleEmail = () => {
+    const selectedProperty = sessionStorage.getItem('selectedProperty');
+    let subject = "Adventure Booking Inquiry";
+    let body = "Hi,\n\nI'm interested in booking an adventure with you. Could you please provide more information?\n\nThank you!";
+    
+    if (selectedProperty) {
+      subject = `Booking Inquiry for ${selectedProperty}`;
+      body = `Hi,\n\nI'm interested in booking ${selectedProperty}. Could you please provide more details about availability and pricing?\n\nThank you!`;
+      sessionStorage.removeItem('selectedProperty');
+    }
+    
+    const emailURL = `mailto:hello@adventurevibes.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = emailURL;
+  };
+
   return (
     <div className="min-h-screen outdoor-decoration">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-secondary/20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-muted/20">
         <div className="bird-decoration"></div>
         <div className="mountain-decoration"></div>
         
@@ -68,19 +100,23 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-xl px-10 py-6 rounded-3xl font-black text-primary-foreground hover-lift fun-button shadow-2xl"
-            >
-              Let's Explore!
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-3 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-xl px-10 py-6 rounded-3xl font-black backdrop-blur-sm"
-            >
-              Plan My Trip
-            </Button>
+            <Link to="/activities">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-xl px-10 py-6 rounded-3xl font-black text-primary-foreground hover-lift fun-button shadow-2xl"
+              >
+                Let's Explore!
+              </Button>
+            </Link>
+            <Link to="/properties">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-3 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-xl px-10 py-6 rounded-3xl font-black backdrop-blur-sm"
+              >
+                Plan My Stay
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -169,9 +205,11 @@ const Home = () => {
                     <span className="text-3xl lg:text-4xl font-black text-primary">$149</span>
                     <span className="text-foreground/70 ml-3 text-lg">per person</span>
                   </div>
-                  <Button className="rounded-3xl bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 py-4 fun-button w-full sm:w-auto">
-                    Book Now!
-                  </Button>
+                  <Link to="/activities">
+                    <Button className="rounded-3xl bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 py-4 fun-button w-full sm:w-auto">
+                      Explore More
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -215,9 +253,11 @@ const Home = () => {
                     <span className="text-3xl lg:text-4xl font-black text-accent">$249</span>
                     <span className="text-foreground/70 ml-3 text-lg">per person</span>
                   </div>
-                  <Button className="rounded-3xl bg-accent hover:bg-accent/90 text-accent-foreground font-black px-8 py-4 fun-button w-full sm:w-auto">
-                    Let's Go!
-                  </Button>
+                  <Link to="/properties">
+                    <Button className="rounded-3xl bg-accent hover:bg-accent/90 text-accent-foreground font-black px-8 py-4 fun-button w-full sm:w-auto">
+                      Let's Go!
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -225,8 +265,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-primary text-primary-foreground overflow-hidden relative outdoor-decoration">
+      {/* Contact Section */}
+      <section id="contact-section" className="py-20 lg:py-32 bg-primary text-primary-foreground overflow-hidden relative outdoor-decoration">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 scroll-reveal">
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-8">Ready for Your Next Story?</h2>
           <p className="text-xl sm:text-2xl mb-12 text-primary-foreground/90 font-medium">
@@ -234,17 +274,28 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
+              onClick={handleWhatsApp}
               size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-3xl px-10 py-6 text-xl font-black fun-button shadow-2xl"
+              className="bg-green-600 hover:bg-green-700 text-white rounded-3xl px-10 py-6 text-xl font-black fun-button shadow-2xl flex items-center justify-center gap-3"
             >
-              Start Planning
+              <MessageCircle className="w-6 h-6" />
+              WhatsApp Us
             </Button>
             <Button 
+              onClick={handlePhone}
               size="lg" 
-              variant="outline" 
-              className="border-3 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm rounded-3xl px-10 py-6 text-xl font-black"
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-3xl px-10 py-6 text-xl font-black fun-button shadow-2xl flex items-center justify-center gap-3"
             >
-              Chat with Expert
+              <Phone className="w-6 h-6" />
+              Call Now
+            </Button>
+            <Button 
+              onClick={handleEmail}
+              size="lg" 
+              className="bg-red-600 hover:bg-red-700 text-white rounded-3xl px-10 py-6 text-xl font-black fun-button shadow-2xl flex items-center justify-center gap-3"
+            >
+              <Mail className="w-6 h-6" />
+              Email Us
             </Button>
           </div>
         </div>

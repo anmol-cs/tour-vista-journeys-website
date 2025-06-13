@@ -1,68 +1,83 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { CheckCircle, Clock, Users, MapPin, TreePine } from 'lucide-react';
+import { useScrollAnimations } from '@/hooks/use-scroll-animations';
 
 const Activities = () => {
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, observerOptions);
-
-    const elements = document.querySelectorAll('.scroll-reveal');
-    elements.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  useScrollAnimations();
 
   const activities = [
     {
       name: "Epic Mountain Trek",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1464822759844-d150baec0494?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       description: "Conquer breathtaking peaks with panoramic views and spot amazing wildlife. Perfect for nature lovers and thrill seekers!",
       duration: "6 hours",
       difficulty: "Moderate"
     },
     {
       name: "Foodie Market Adventure",
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       description: "Dive into local culture at vibrant markets. Taste incredible street food and discover amazing handmade treasures!",
       duration: "3 hours",
       difficulty: "Easy"
     },
     {
       name: "Wild Water Rush",
-      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       description: "Get your adrenaline pumping with kayaking and rafting through stunning natural waterways and rapids!",
       duration: "5 hours",
       difficulty: "Moderate"
     },
     {
       name: "Culture & History Hunt",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1520637836862-4d197d17c35a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1539650116574-75c0c6d73a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       description: "Uncover amazing stories and stunning architecture on guided walks through historic neighborhoods and landmarks.",
       duration: "4 hours",
       difficulty: "Easy"
     },
     {
       name: "Wildlife Safari Experience",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1549366021-9f761d040a94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1535406208535-1429839cfd13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       description: "Get up close with native animals in their natural habitat with expert guides and pro photography equipment!",
       duration: "7 hours",
       difficulty: "Easy"
     },
     {
       name: "Sunset Photo Adventure",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1464822759844-d150baec0494?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ],
       description: "Capture Instagram-worthy sunset shots from secret spots with tips from professional photographers!",
       duration: "3 hours",
       difficulty: "Easy"
@@ -77,6 +92,15 @@ const Activities = () => {
     "Small groups for personalized fun",
     "Photography tips and assistance"
   ];
+
+  const handleBookNow = () => {
+    const element = document.getElementById('contact-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-section';
+    }
+  };
 
   return (
     <div className="min-h-screen bg-muted/20 outdoor-decoration">
@@ -98,6 +122,24 @@ const Activities = () => {
         </div>
       </section>
 
+      {/* Call to Action Before Activities */}
+      <section className="py-12 bg-accent text-accent-foreground">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4">
+            Ready for Epic Adventures?
+          </h2>
+          <p className="text-lg sm:text-xl mb-6 text-accent-foreground/80 font-medium">
+            Book your adventure today and create memories that last a lifetime!
+          </p>
+          <Button 
+            onClick={handleBookNow}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-3xl px-8 py-4 text-lg font-black fun-button"
+          >
+            Book Your Adventure Now!
+          </Button>
+        </div>
+      </section>
+
       {/* Activities Grid */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,11 +156,24 @@ const Activities = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {activities.map((activity, index) => (
               <Card key={index} className="overflow-hidden hover-lift group border-0 shadow-2xl bg-card rounded-3xl scroll-reveal wavy-border" style={{animationDelay: `${index * 0.15}s`}}>
-                <div 
-                  className="h-56 lg:h-64 bg-cover bg-center relative group-hover-scale transition-transform duration-700"
-                  style={{ backgroundImage: `url('${activity.image}')` }}
-                >
-                  <div className="absolute inset-0 bg-primary/30 group-hover:bg-primary/40 transition-all duration-300"></div>
+                <div className="relative">
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {activity.images.map((image, idx) => (
+                        <CarouselItem key={idx}>
+                          <div 
+                            className="h-56 lg:h-64 bg-cover bg-center group-hover-scale transition-transform duration-700"
+                            style={{ backgroundImage: `url('${image}')` }}
+                          >
+                            <div className="absolute inset-0 bg-primary/20"></div>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2" />
+                    <CarouselNext className="right-2" />
+                  </Carousel>
+                  
                   <div className="absolute top-4 left-4">
                     <span className="bg-accent/90 backdrop-blur-sm text-accent-foreground px-3 py-2 rounded-2xl text-sm font-black">
                       {activity.difficulty}
@@ -142,8 +197,13 @@ const Activities = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-20 scroll-reveal">
+      {/* Included Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center scroll-reveal">
             <Card className="bg-card shadow-2xl max-w-5xl mx-auto border-0 rounded-3xl wavy-border">
               <CardContent className="p-10 lg:p-16">
                 <div className="flex items-center justify-center mb-8">
@@ -177,6 +237,24 @@ const Activities = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Final Call to Action */}
+      <section className="py-12 bg-primary text-primary-foreground">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4">
+            Don't Wait - Adventure is Calling!
+          </h2>
+          <p className="text-lg sm:text-xl mb-6 text-primary-foreground/80 font-medium">
+            Secure your spot on these amazing adventures. Limited group sizes mean limited availability!
+          </p>
+          <Button 
+            onClick={handleBookNow}
+            className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-3xl px-8 py-4 text-lg font-black fun-button"
+          >
+            Contact Us to Book Now!
+          </Button>
         </div>
       </section>
     </div>
