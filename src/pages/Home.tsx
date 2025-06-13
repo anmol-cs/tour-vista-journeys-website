@@ -73,7 +73,7 @@ const Home = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center parallax opacity-60"
             style={{
-              backgroundImage: 'url("https://github.com/anmol-cs/tour-vista-journeys-website/blob/main/IMG/IMG_9780.JPG")'
+              backgroundImage: 'url("/public/IMG/IMG_9780.jpg")'
             }}
           ></div>
         </div>
@@ -171,7 +171,7 @@ const Home = () => {
               <div 
                 className="h-80 lg:h-96 bg-cover bg-center relative group-hover-scale transition-transform duration-700"
                 style={{
-                  backgroundImage: `url('/IMG/img1.jpg')`
+                  backgroundImage: `url('/public/IMG/img1.jpg')`
                 }}
               >
                 <div className="absolute inset-0 bg-primary/20"></div>
@@ -219,7 +219,7 @@ const Home = () => {
               <div 
                 className="h-80 lg:h-96 bg-cover bg-center relative group-hover-scale transition-transform duration-700"
                 style={{
-                  backgroundImage: `url('/IMG/OHPOverview.png')`
+                  backgroundImage: `url('/public/IMG/OHPOverview.png')`
                 }}
               >
                 <div className="absolute inset-0 bg-accent/20"></div>
