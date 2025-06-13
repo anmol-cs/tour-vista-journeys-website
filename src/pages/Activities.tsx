@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Clock, Users, MapPin } from 'lucide-react';
+import { CheckCircle, Clock, Users, MapPin, TreePine } from 'lucide-react';
 
 const Activities = () => {
   useEffect(() => {
@@ -26,115 +26,116 @@ const Activities = () => {
 
   const activities = [
     {
-      name: "Scenic Mountain Hike",
+      name: "Epic Mountain Trek",
       image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Explore breathtaking mountain trails with panoramic views and diverse wildlife. Perfect for nature enthusiasts and photography lovers.",
+      description: "Conquer breathtaking peaks with panoramic views and spot amazing wildlife. Perfect for nature lovers and thrill seekers!",
       duration: "6 hours",
       difficulty: "Moderate"
     },
     {
-      name: "Local Market Tour",
+      name: "Foodie Market Adventure",
       image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Immerse yourself in local culture at bustling markets. Taste authentic cuisine and discover handcrafted treasures.",
+      description: "Dive into local culture at vibrant markets. Taste incredible street food and discover amazing handmade treasures!",
       duration: "3 hours",
       difficulty: "Easy"
     },
     {
-      name: "River Adventure",
+      name: "Wild Water Rush",
       image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Experience thrilling water activities including kayaking and river rafting through stunning natural landscapes.",
+      description: "Get your adrenaline pumping with kayaking and rafting through stunning natural waterways and rapids!",
       duration: "5 hours",
       difficulty: "Moderate"
     },
     {
-      name: "Cultural Heritage Walk",
+      name: "Culture & History Hunt",
       image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Discover the rich history and architecture of our region with guided walks through historic districts.",
+      description: "Uncover amazing stories and stunning architecture on guided walks through historic neighborhoods and landmarks.",
       duration: "4 hours",
       difficulty: "Easy"
     },
     {
-      name: "Wildlife Watching",
+      name: "Wildlife Safari Experience",
       image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Observe native wildlife in their natural habitat with experienced guides and professional equipment.",
+      description: "Get up close with native animals in their natural habitat with expert guides and pro photography equipment!",
       duration: "7 hours",
       difficulty: "Easy"
     },
     {
-      name: "Sunset Photography",
+      name: "Sunset Photo Adventure",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Capture stunning sunset views from the best vantage points with tips from professional photographers.",
+      description: "Capture Instagram-worthy sunset shots from secret spots with tips from professional photographers!",
       duration: "3 hours",
       difficulty: "Easy"
     }
   ];
 
   const inclusions = [
-    "Expert local guide for all activities",
-    "All necessary equipment and safety gear", 
-    "Transportation between activity locations",
-    "Refreshments and meals as scheduled",
-    "Small group sizes for personalized experience",
-    "Photography assistance and tips"
+    "Expert adventure guide for all activities",
+    "All gear and safety equipment included", 
+    "Transportation between epic locations",
+    "Delicious snacks and meals provided",
+    "Small groups for personalized fun",
+    "Photography tips and assistance"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/30">
+    <div className="min-h-screen bg-muted/20 outdoor-decoration">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary/90 to-accent text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-20 left-10 w-24 h-24 bg-white/5 rounded-full blur-lg animate-bounce-gentle"></div>
+      <section className="relative bg-primary text-primary-foreground py-20 lg:py-32 overflow-hidden">
+        <div className="bird-decoration"></div>
+        <div className="absolute top-20 right-10 w-32 h-32 bg-primary-foreground/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 bg-primary-foreground/5 rounded-full blur-lg animate-bounce-gentle"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">Adventure Activities</h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed px-4">
-              Discover amazing activities included in our guided tours. Each experience is carefully 
-              curated to showcase the best of our region's natural beauty, culture, and adventure opportunities.
+            <TreePine className="w-16 h-16 mx-auto mb-6 text-primary-foreground animate-wiggle" />
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-8">Epic Activities</h1>
+            <p className="text-xl sm:text-2xl lg:text-3xl text-primary-foreground/90 max-w-5xl mx-auto leading-relaxed font-medium">
+              Get ready for heart-pumping adventures! Each experience is handpicked to showcase 
+              the wildest, most beautiful, and most exciting spots in our region.
             </p>
           </div>
         </div>
       </section>
 
       {/* Activities Grid */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 scroll-reveal">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 sm:mb-6">
-              What You'll Experience
+          <div className="text-center mb-20 scroll-reveal">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-primary mb-8">
+              What Adventures Await You?
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our tours feature a diverse range of activities designed to give you an authentic 
-              taste of local life, natural wonders, and cultural experiences.
+            <p className="text-xl sm:text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed font-medium">
+              Our tours pack in diverse activities designed to give you the ultimate 
+              taste of local life, natural wonders, and cultural thrills!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {activities.map((activity, index) => (
-              <Card key={index} className="overflow-hidden hover-lift group border-0 shadow-lg bg-card scroll-reveal" style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={index} className="overflow-hidden hover-lift group border-0 shadow-2xl bg-card rounded-3xl scroll-reveal wavy-border" style={{animationDelay: `${index * 0.15}s`}}>
                 <div 
-                  className="h-48 sm:h-56 lg:h-48 bg-cover bg-center relative group-hover-scale transition-transform duration-500"
+                  className="h-56 lg:h-64 bg-cover bg-center relative group-hover-scale transition-transform duration-700"
                   style={{ backgroundImage: `url('${activity.image}')` }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-primary/30 group-hover:bg-primary/40 transition-all duration-300"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-primary/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-accent/90 backdrop-blur-sm text-accent-foreground px-3 py-2 rounded-2xl text-sm font-black">
                       {activity.difficulty}
                     </span>
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <div className="flex items-center text-sm">
+                    <div className="flex items-center text-sm font-bold">
                       <Clock className="w-4 h-4 mr-2" />
                       <span>{activity.duration}</span>
                     </div>
                   </div>
                 </div>
-                <CardContent className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-foreground">
+                <CardContent className="p-6 lg:p-8">
+                  <h3 className="text-xl lg:text-2xl font-black mb-4 text-primary">
                     {activity.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-foreground/70 leading-relaxed font-medium">
                     {activity.description}
                   </p>
                 </CardContent>
@@ -142,35 +143,35 @@ const Activities = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12 sm:mt-16 scroll-reveal">
-            <Card className="bg-card shadow-xl max-w-4xl mx-auto border-0">
-              <CardContent className="p-6 sm:p-8 lg:p-12">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-primary" />
+          <div className="text-center mt-20 scroll-reveal">
+            <Card className="bg-card shadow-2xl max-w-5xl mx-auto border-0 rounded-3xl wavy-border">
+              <CardContent className="p-10 lg:p-16">
+                <div className="flex items-center justify-center mb-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-3xl flex items-center justify-center">
+                    <CheckCircle className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-6 sm:mb-8">
-                  Included in Every Tour
+                <h3 className="text-2xl sm:text-3xl lg:text-5xl font-black text-primary mb-10">
+                  Included in Every Adventure
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 text-left">
                   {inclusions.map((inclusion, index) => (
                     <div key={index} className="flex items-start group">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 group-hover:scale-125 transition-transform"></div>
-                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                      <div className="w-3 h-3 bg-primary rounded-full mr-4 mt-2 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-foreground/70 group-hover:text-foreground transition-colors font-medium text-lg">
                         {inclusion}
                       </span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                  <div className="flex items-center text-muted-foreground">
-                    <Users className="w-5 h-5 mr-2 text-primary" />
-                    <span className="text-sm">Small groups (max 12 people)</span>
+                <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
+                  <div className="flex items-center text-foreground/70">
+                    <Users className="w-6 h-6 mr-3 text-primary" />
+                    <span className="font-bold">Small groups (max 12 adventurers)</span>
                   </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <MapPin className="w-5 h-5 mr-2 text-primary" />
-                    <span className="text-sm">Multiple stunning locations</span>
+                  <div className="flex items-center text-foreground/70">
+                    <MapPin className="w-6 h-6 mr-3 text-primary" />
+                    <span className="font-bold">Multiple stunning locations</span>
                   </div>
                 </div>
               </CardContent>
