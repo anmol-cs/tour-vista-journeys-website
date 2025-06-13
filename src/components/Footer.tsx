@@ -67,13 +67,13 @@ const Footer = () => {
                 <div className="w-10 h-10 bg-primary-foreground/10 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-accent transition-colors">
                   <Phone size={16} className="text-primary-foreground/70 group-hover:text-accent-foreground" />
                 </div>
-                <span className="text-primary-foreground/70 group-hover:text-primary-foreground transition-colors font-medium">+1 (555) 123-4567</span>
+                <span className="text-primary-foreground/70 group-hover:text-primary-foreground transition-colors font-medium">+91 (999) 9999999</span>
               </div>
               <div className="flex items-center group">
                 <div className="w-10 h-10 bg-primary-foreground/10 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-accent transition-colors">
                   <MapPin size={16} className="text-primary-foreground/70 group-hover:text-accent-foreground" />
                 </div>
-                <span className="text-primary-foreground/70 group-hover:text-primary-foreground transition-colors font-medium">Adventure HQ Downtown</span>
+                <span className="text-primary-foreground/70 group-hover:text-primary-foreground transition-colors font-medium">CafeKamshet.in HQ Kamshet</span>
               </div>
               <p className="text-primary-foreground/70 hover:text-primary-foreground transition-colors cursor-pointer font-medium">
                 hello@adventurevibes.com
@@ -84,7 +84,8 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-16 pt-12 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/60 font-medium">
-            © 2024 AdventureVibes. Made with 🏔️ for wild souls.
+            Made by Anmol with 💖 for wild souls🏔️.<br />
+            © 2025 CAFEKAMSHET. All rights reserved.
           </p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground font-medium transition-colors">Privacy</a>

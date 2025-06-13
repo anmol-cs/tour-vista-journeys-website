@@ -123,7 +123,7 @@ const Activities = () => {
       </section>
 
       {/* Call to Action Before Activities */}
-      <section className="py-12 bg-accent text-accent-foreground">
+      {/*<section className="py-12 bg-accent text-accent-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4">
             Ready for Epic Adventures?
@@ -139,7 +139,9 @@ const Activities = () => {
           </Button>
         </div>
       </section>
+        */}
 
+        
       {/* Activities Grid */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

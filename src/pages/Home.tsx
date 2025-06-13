@@ -71,9 +71,9 @@ const Home = () => {
         
         <div className="absolute inset-0">
           <div 
-            className="absolute inset-0 bg-cover bg-center parallax opacity-20"
+            className="absolute inset-0 bg-cover bg-center parallax opacity-60"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+              backgroundImage: 'url("/IMG/IMG_9780.jpg")'
             }}
           ></div>
         </div>
@@ -96,7 +96,7 @@ const Home = () => {
           
           <p className="text-xl sm:text-2xl md:text-3xl mb-12 text-foreground/80 max-w-4xl mx-auto leading-relaxed font-medium">
             Escape the ordinary! Join us for epic outdoor experiences, 
-            secret spots, and unforgettable moments in nature's playground.
+            secret spots, and unforgettable moments in Kamshet - Mumbai's Backyard.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -171,7 +171,7 @@ const Home = () => {
               <div 
                 className="h-80 lg:h-96 bg-cover bg-center relative group-hover-scale transition-transform duration-700"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')`
+                  backgroundImage: `url('/IMG/img1.jpg')`
                 }}
               >
                 <div className="absolute inset-0 bg-primary/20"></div>
@@ -202,7 +202,7 @@ const Home = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                   <div>
-                    <span className="text-3xl lg:text-4xl font-black text-primary">$149</span>
+                    <span className="text-3xl lg:text-4xl font-black text-primary">₹1000</span>
                     <span className="text-foreground/70 ml-3 text-lg">per person</span>
                   </div>
                   <Link to="/activities">
@@ -219,7 +219,7 @@ const Home = () => {
               <div 
                 className="h-80 lg:h-96 bg-cover bg-center relative group-hover-scale transition-transform duration-700"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')`
+                  backgroundImage: `url('/IMG/OHPOverview.png')`
                 }}
               >
                 <div className="absolute inset-0 bg-accent/20"></div>
@@ -237,11 +237,11 @@ const Home = () => {
                 <div className="space-y-6 mb-8">
                   <div className="flex items-center text-foreground/70">
                     <Heart className="w-6 h-6 mr-4 text-accent" />
-                    <span className="text-lg font-medium">Everything from day trip + camping</span>
+                    <span className="text-lg font-medium">Everything from day trip + stay</span>
                   </div>
                   <div className="flex items-center text-foreground/70">
                     <MapPin className="w-6 h-6 mr-4 text-accent" />
-                    <span className="text-lg font-medium">Cozy wilderness accommodation</span>
+                    <span className="text-lg font-medium">Cozy accommodation</span>
                   </div>
                   <div className="flex items-center text-foreground/70">
                     <Camera className="w-6 h-6 mr-4 text-accent" />
@@ -250,7 +250,7 @@ const Home = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                   <div>
-                    <span className="text-3xl lg:text-4xl font-black text-accent">$249</span>
+                    <span className="text-3xl lg:text-4xl font-black text-accent">₹2500 - ₹3500</span>
                     <span className="text-foreground/70 ml-3 text-lg">per person</span>
                   </div>
                   <Link to="/properties">

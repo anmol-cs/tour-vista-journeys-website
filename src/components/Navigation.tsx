@@ -26,7 +26,7 @@ const Navigation = () => {
               <Mountain className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="text-2xl font-black text-primary tracking-tight">
-              AdventureVibes
+              CAFE-^-KAMSHET
             </span>
           </Link>
 
@@ -45,22 +45,6 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-          </div>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="rounded-2xl border-2 border-primary/30 text-primary font-bold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              Help
-            </Button>
-            <Button 
-              size="sm" 
-              className="rounded-2xl bg-accent text-accent-foreground font-bold hover:bg-accent/90 fun-button shadow-lg"
-            >
-              Start Adventure
-            </Button>
           </div>
 
           {/* Mobile menu button */}
